@@ -27,7 +27,7 @@ class BaseSyncSubscriptionServer(BaseSubscriptionServer):
 
         except Exception as e:
             self.send_error(connection_context, op_id, e, GQL_CONNECTION_ERROR)
-            connection_context.close(1011)
+            connection_context.close(3011)
 
     def on_start(self, connection_context, op_id, params):
         # Attempt to unsubscribe first in case we already have a subscription

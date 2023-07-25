@@ -138,7 +138,7 @@ class BaseAsyncSubscriptionServer(base.BaseSubscriptionServer, ABC):
             await self.send_message(connection_context, op_type=GQL_CONNECTION_ACK)
         except Exception as e:
             await self.send_error(connection_context, op_id, e, GQL_CONNECTION_ERROR)
-            await connection_context.close(1011)
+            await connection_context.close(3011)
 
     async def on_start(self, connection_context, op_id, params):
         # Attempt to unsubscribe first in case we already have a subscription

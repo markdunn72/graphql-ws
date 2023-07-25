@@ -103,7 +103,7 @@ class BaseSubscriptionServer(object):
         raise NotImplementedError("on_connection_init method not implemented")
 
     def on_connection_terminate(self, connection_context, op_id):
-        return connection_context.close(1011)
+        return connection_context.close(3011)
 
     def get_graphql_params(self, connection_context, payload):
         context = payload.get("context", connection_context.request_context)

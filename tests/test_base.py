@@ -31,7 +31,7 @@ def test_terminate():
 
     context = mock.Mock()
     server.on_connection_terminate(connection_context=context, op_id=1)
-    context.close.assert_called_with(1011)
+    context.close.assert_called_with(3011)
 
 
 def test_send_error():

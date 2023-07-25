@@ -28,7 +28,7 @@ def server():
 async def test_terminate(server: TstServer):
     context = AsyncMock()
     await server.on_connection_terminate(connection_context=context, op_id=1)
-    context.close.assert_called_with(1011)
+    context.close.assert_called_with(3011)
 
 
 async def test_send_error(server: TstServer):
